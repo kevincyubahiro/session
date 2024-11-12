@@ -19,14 +19,14 @@ include("conn.php");
 if(isset($_POST['submit'])){
     $username=$_POST['username'];
     $password=$_POST['password'];
-    $insert = mysqli_query($conn, "INSERT INTO trainers (username, password) VALUES ('$username', '$password')");
+    $insert = mysqli_query($conn, "INSERT INTO trainers (username, `password`) VALUES ('$username', '$password')");
 
 
     if($insert){
         header("location:insert.php");
     }
     else{
-        echo"not data inserted";
+        echo "this name already exist";
     }
 }
 
