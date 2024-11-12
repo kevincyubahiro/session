@@ -20,9 +20,12 @@ while($row=mysqli_fetch_array($select)){
 
 ?>
 <tr>
-    <td><</td>
+    <td><?php echo $row['id']?></td>
+    <td><?php echo $row['username']?></td>
+    <td><?php echo $row['password']?></td>
 </tr>
-
+<?php
+}?>
     </table>
 </body>
 </html>
