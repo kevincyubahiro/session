@@ -18,6 +18,13 @@ include("conn.php");
 if(isset($_POST['submit'])){
     $username=$_POST['username'];
     $password=$_POST['password'];
+    $insert=mysqli_query($conn,"INSERT INTO trainers WHERE ('','username','password')");
+    if($insert){
+        echo"data inserted";
+    }
+    else{
+        echo"not data inserted";
+    }
 }
 
 
