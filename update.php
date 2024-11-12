@@ -1,5 +1,6 @@
 <?php 
 include("conn.php");
+$id=$_GET['id'];
 $select=mysqli_query($conn,"SELECT * FROM trainers WHERE id='$id'");
 $row=mysqli_fetch_array($select)
 
@@ -13,8 +14,8 @@ $row=mysqli_fetch_array($select)
 </head>
 <body>
     <form action="" method="post">
-    <input type="text"name ="username"placeholder="username"values="<?php echo $row['username']?>">
-        <input type="password"name ="password"placeholder="password"values="<?php echo $row['password']?>">
+    <input type="text"name ="username"placeholder="username"value="<?php echo $row['username']?>"><br>
+        <input type="password"name ="password"placeholder="password"value="<?php echo $row['password']?>"><br>
         <button name="submit">update</button>
     </form>
 </body>
@@ -24,11 +25,11 @@ include("conn.php");
 if(isset($_POST['submit'])){
     $username=$_POST['username'];
     $password=$_POST['password'];
-    $insert = mysqli_query($conn, "INSERT INTO trainers (username, password) VALUES ('$username', '$password')");
+    $update = mysqli_query($conn, "UPDATE trainers SET username='$username', password='$password' WHERE id='$id'");
 
 
-    if($insert){
-        echo"data inserted";
+    if($update){
+        header("location:select.php");
     }
     else{
         echo"not data inserted";

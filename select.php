@@ -25,7 +25,7 @@ while($row=mysqli_fetch_array($select)){
     <td><?php echo $row['username']?></td>
     <td><?php echo $row['password']?></td>
     <td><a href="delete.php?id=<?php echo $row['id']?>">delete</a></td>
-    <td><a href="delete.php?id=<?php echo $row['id']?>">update</a></td>
+    <td><a href="update.php?id=<?php echo $row['id']?>">update</a></td>
 </tr>
 <?php
 }?>
