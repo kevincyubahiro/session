@@ -9,6 +9,8 @@
     <form action="" method="post">
         <input type="text"name ="username"placeholder="username">
         <input type="password"name ="password"placeholder="password">
+        <button name="submit">login</button>
     </form>
 </body>
 </html>
+<?php
