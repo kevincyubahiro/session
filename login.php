@@ -7,9 +7,10 @@
 </head>
 <body>
     <form action="" method="post">
-        <input type="text"name ="username"placeholder="username">
-        <input type="password"name ="password"placeholder="password">
-        <button name="submit">login</button>
+        <h3>create new account</h3>
+        <input type="text"name ="username"placeholder="username"required><br><br>
+        <input type="password"name ="password"placeholder="password"required><br><br>
+        <button name="submit">submit</button><br>
     </form>
 </body>
 </html>

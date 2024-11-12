@@ -31,7 +31,7 @@ if(isset($_POST['submit'])){
         header("location:home.php");
     }
     else{
-        echo "<script>alert(wrong credential create your account)</script>";
+        echo "wrong credential create your account";
 
     
     }
