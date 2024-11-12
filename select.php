@@ -11,11 +11,12 @@
 <th>id</th>
 <th>username</th>
 <th>password</th>
+<th colpan="2">opeartion</th>
 
 </tr>
 <?php 
 include("conn.php");
-$select=mysqli_query($conn,"SELECT * FROM trainers")
+$select=mysqli_query($conn,"SELECT * FROM trainers");
 while($row=mysqli_fetch_array($select)){
 
 ?>
@@ -23,6 +24,8 @@ while($row=mysqli_fetch_array($select)){
     <td><?php echo $row['id']?></td>
     <td><?php echo $row['username']?></td>
     <td><?php echo $row['password']?></td>
+    <td><a href="delete.php?id=<?php echo $row['id']?>">delete</a></td>
+    <td><a href="delete.php?id=<?php echo $row['id']?>">update</a></td>
 </tr>
 <?php
 }?>
