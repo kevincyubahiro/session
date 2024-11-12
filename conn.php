@@ -1,10 +1,10 @@
 <?php
 $conn=mysqli_connect("localhost","root","","school");
 if($conn){
-    echo"connected successfully"
+    echo"connected successfully";
 }
 else{
-    echo"not";
+    echo"not connect";
 }
 
 
