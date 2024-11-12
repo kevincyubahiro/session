@@ -7,27 +7,33 @@
 </head>
 <body>
     <form action="" method="post">
-        <input type="text"name ="username"placeholder="username">
-        <input type="password"name ="password"placeholder="password">
-        <button name="submit">login</button>
+        <input type="text"name ="username"placeholder="username"><br><br>
+        <input type="password"name ="password"placeholder="password"><br>
+        <button name="submit">login</button><br><br>
+        <a href="login.php">sign up</a>
     </form>
 </body>
 </html>
 <?php
 include("conn.php");
+session_start();
 if(isset($_POST['submit'])){
     $username=$_POST['username'];
     $password=$_POST['password'];
-    $insert = mysqli_query($conn, "INSERT INTO trainers (username, password) VALUES ('$username', '$password')");
+    $login = mysqli_query($conn, "SELECT * FROM  trainers WHERE  username='$username' AND `password`='$password'");
+    $count=mysqli_num_rows($login);
+    if($count){
+    $_SESSION=$_POST['username'];
+    $_SESSION=$_POST['password'];
 
 
-    if($insert){
-        echo"data inserted";
+    
+        header("location:home.php");
     }
     else{
-        echo"not data inserted";
+        echo "<script>alert(wrong credential create your account)</script>";
+
+    
     }
 }
-
-
 ?>
